@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <!-- figma:head-start -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f2f2f7" />
+    <meta
+      name="description"
+      content="Calculadora de Taxa Metabólica Basal com histórico pessoal."
+    />
+    <title>Calculadora de TMB</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./src/styles.css" />
+
+    <script>
+      /*
+       * O modo "local" funciona no Figma e em links compartilhados sem chave.
+       * Para usar o server.py no VS Code, troque API_MODE para "server" e
+       * preencha API_TRANSPORTE_KEY com a API_TRANSPORT_KEY exibida pelo Python.
+       */
+      window.APP_CONFIG = {
+        API_MODE: 'local',
+        API_BASE_URL: '/api',
+        API_TRANSPORTE_KEY: '',
+      }
+    </script>
+    <!-- figma:head-end -->
+  </head>
+  <body>
+    <!-- figma:body-start -->
+    <main id="app" aria-live="polite"></main>
+    <div id="toast" class="toast" role="status" aria-live="assertive"></div>
+    <script>
+      const appScript = document.createElement('script')
+      appScript.src = './src/app.js'
+      appScript.defer = true
+      document.head.append(appScript)
+    </script>
+    <!-- figma:body-end -->
+  </body>
+</html>
